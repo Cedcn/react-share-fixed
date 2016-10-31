@@ -1,4 +1,5 @@
-const Official = () => {
+const Official = props => {
+  const { qrcode = require('../images/official.jpg') } = props;
   return (
     <div className={`${S.item} ${S.official}`}>
       <div className={`${S.officialBtn} ${S.btn}`}>
@@ -6,10 +7,14 @@ const Official = () => {
         <span className={`${S.text}`}>IOS</span>
       </div>
       <div className={`${S.qrcode}`} >
-        <img alt="微信公众平台" src="https://ocpk3ohd2.qnssl.com/assets/qrcodes/geekpark-1e9a66f8b62a8c80c1afce702a924b94.jpg" />
+        <img alt="ios下载" src={qrcode} />
       </div>
     </div>
   );
+};
+
+Official.propTypes = {
+  qrcode: React.PropTypes.string
 };
 
 export default Official;

@@ -34,5 +34,8 @@ const Share = props => {
   );
 };
 
+Share.propTypes = {
+  share: React.PropTypes.object
+};
 
 export default Share;
