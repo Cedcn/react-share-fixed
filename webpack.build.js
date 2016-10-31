@@ -2,6 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const config = require('./webpack.config');
 
+config.entry = {
+  'share-fixed': './src/ShareFixed.jsx'
+};
+
 config.output.path = path.join(__dirname, 'build');
 config.output.libraryTarget = 'umd';
 config.externals = {

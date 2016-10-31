@@ -2,10 +2,12 @@
   "name": "react-share-fixed",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/ShareFixed.jsx",
   "scripts": {
     "start": "npm run dev",
-    "dev": "webpack-dev-server --inline"
+    "dev": "webpack-dev-server --inline",
+    "build": "NODE_ENV=production webpack -p --config webpack.build.js",
+    "lint": "eslint src/"
   },
   "author": "",
   "license": "ISC",

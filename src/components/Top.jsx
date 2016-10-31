@@ -7,7 +7,7 @@ class Top extends React.Component {
       isShow: false
     };
     const pageScroll = () => {
-      if (window.scrollY >= 100) {
+      if (window.scrollY >= 400) {
         this.setState({ isShow: true });
       } else {
         this.setState({ isShow: false });
