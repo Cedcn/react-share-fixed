@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server --inline"
   },
   "author": "",
   "license": "ISC",
@@ -22,7 +22,6 @@
     "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
-    "html-webpack-plugin": "^2.24.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "style-loader": "^0.13.1",
@@ -31,8 +30,11 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "@geekpark/share-action": "^1.0.7",
+    "qrcode.react": "^0.6.1",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "scroll-to": "0.0.2"
   },
   "peerDependencies": {
     "react": "^15.x",

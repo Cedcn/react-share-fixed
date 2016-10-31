@@ -37,6 +37,8 @@
     "db": true,
     "isDev": true,
     "document": true,
-    "React": true
+    "React": true,
+    "S": true,
+    "window": true
   }
 }

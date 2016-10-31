@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 
 const config = {
@@ -10,7 +11,10 @@ const config = {
     publicPath: '/static/'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    alias: {
+      shareFixedStyle: path.resolve(__dirname, './src/share_fixed.less')
+    }
   },
   module: {
     noParse: [],
@@ -23,7 +27,6 @@ const config = {
       }
     ]
   },
-  target: 'node',
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
@@ -31,7 +34,8 @@ const config = {
       }
     }),
     new webpack.ProvidePlugin({
-      React: 'react'
+      React: 'react',
+      S: 'shareFixedStyle'
     })
   ],
   devServer: {

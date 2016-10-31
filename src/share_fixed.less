@@ -1,0 +1,236 @@
+@import './common.less';
+@import './icons.less';
+
+@brown: #A28356;
+
+.btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 1px solid @brown;
+  color: @brown;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-sizing: border-box;
+  background-color: #fff;
+
+  .iconfont,
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: left;
+  }
+
+  .iconfont {
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: rotateY(0) translate(-50%, -50%);
+  }
+
+  .text {
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: rotateY(90deg) translate(-50%, -50%);
+  }
+}
+
+.show {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+
+.hide {
+  opacity: 0;
+  transform: scale(0.2);
+  visibility: hidden;
+}
+
+.shareFixed {
+  position: fixed;
+  right: 25px;
+  bottom: 30%;
+  transition: all 0.3s;
+  z-index: 99;
+
+  .item {
+    position: relative;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+  }
+
+  .btn {
+    &:hover {
+      color: #fff;
+      background-color: @brown;
+
+      .iconfont {
+        opacity: 0;
+        transform: rotateY(90deg) translate(-50%, -50%);
+      }
+
+      .text {
+        opacity: 1;
+        transform: rotateY(0) translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.qrcode {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  right: 125%;
+  top: 50%;
+  transform: scale(0) translateY(-50%);
+  transform-origin: right top;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  background-color: #fff;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    transform: translateY(-50%) translateX(100%);
+    border-left-color: #fff;
+  }
+}
+
+.official,
+.mobile,
+.wechatBtn {
+  &:hover {
+    .qrcode {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1) translateY(-50%);
+    }
+  }
+}
+
+.share {
+  position: relative;
+
+  .btn {
+    position: relative;
+    z-index: 10;
+  }
+
+  .socialBtn {
+    position: relative;
+    z-index: 10;
+    width: 46px;
+    height: 46px;
+    text-align: center;
+    line-height: 46px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    color: #fff;
+
+    .iconfont {
+      font-size: 25px;
+    }
+  }
+
+  .socialWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 155px;
+    height: 125%;
+    transition: all 0.3s;
+    opacity: 0;
+    visibility: hidden;
+
+    &:nth-child(2) {
+      transform: translateX(40%) rotate(0deg);
+      transform-origin: 130px - 23px center;
+
+      .socialBtn {
+        transform: rotate(0deg);
+      }
+    }
+
+    &:nth-child(3) {
+       transform: translateX(40%) rotate(0deg);
+    }
+
+    &:nth-child(4) {
+      height: 100%;
+      transform: translateX(40%) rotate(0deg);
+      transform-origin: 130px - 23px center;
+
+      .socialBtn {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  .wechatBtn {
+    background-color: #8dc61f;
+
+    .qrcode {
+      padding: 6px;
+    }
+  }
+
+  .weiboBtn {
+    background-color: #d52a2a;
+  }
+
+  .twitterBtn {
+    background-color: #2daae2;
+  }
+
+  &:hover {
+    .socialWrapper {
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.3s;
+
+      &:nth-child(2) {
+        width: 130px;
+        transform: rotate(33deg);
+        transform-origin: 130px - 23px center;
+
+        .socialBtn {
+          transform: rotate(-33deg);
+        }
+      }
+
+      &:nth-child(3) {
+         transform: translateX(0) rotate(0deg);
+      }
+
+      &:nth-child(4) {
+        width: 130px;
+        transform: rotate(-33deg);
+        transform-origin: 130px - 23px center;
+
+        .socialBtn {
+          transform: rotate(33deg);
+        }
+      }
+    }
+  }
+}

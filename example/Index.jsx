@@ -3,17 +3,15 @@ import ShareFixed from '../src/ShareFixed';
 import S from './index.less';
 
 const config = {
-
+  size: 14
 };
 
-class Example extends React.Component {
-  render() {
-    return (
-      <div className={S.example}>
-        <ShareFixed {...config} />
-      </div>
-    );
-  }
-}
+const Example = () => {
+  return (
+    <div className={S.example}>
+      <ShareFixed {...config} />
+    </div>
+  );
+};
 
 render(<Example />, document.getElementById('share-fixed'));
