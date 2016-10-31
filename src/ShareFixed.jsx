@@ -4,20 +4,31 @@ import Mobile from './components/Mobile';
 import Top from './components/Top';
 
 const ShareFixed = props => {
-  const { size = 14 } = props;
+  const { iconbar, officialQrcode, appQrcode, share } = props;
+  const isMount = type => iconbar.indexOf(type) >= 0;
 
   return (
-    <div className={`${S.shareFixed}`} style={{ fontSize: size }}>
-      <Share />
-      <Official />
-      <Mobile />
-      <Top />
+    <div className={`${S.shareFixed}`}>
+      {isMount('share') ? <Share options={share} /> : null}
+      {isMount('app') ? <Mobile qrcode={appQrcode} /> : null}
+      {isMount('official') ? <Official qrcode={officialQrcode} /> : null}
+      {isMount('backtop') ? <Top /> : null}
     </div>
   );
 };
 
+ShareFixed.defaultProps = {
+  iconbar: ['share', 'app', 'official', 'backtop'], // Need show Component
+  share: {}, // share-action options
+  officialQrcode: require('./images/official.jpg'),
+  appQrcode: require('./images/app_qr.jpg')
+};
+
 ShareFixed.propTypes = {
-  size: React.PropTypes.number
+  iconbar: React.PropTypes.array,
+  share: React.PropTypes.object,
+  officialQrcode: React.PropTypes.string,
+  appQrcode: React.PropTypes.string
 };
 
 export default ShareFixed;

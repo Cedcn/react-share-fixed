@@ -3,7 +3,7 @@ import ShareFixed from '../src/ShareFixed';
 import S from './index.less';
 
 const config = {
-  size: 14
+  iconbar: ['share', 'app', 'official', 'backtop']
 };
 
 const Example = () => {

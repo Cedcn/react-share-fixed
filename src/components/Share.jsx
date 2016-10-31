@@ -3,7 +3,7 @@ import QRCode from 'qrcode.react';
 
 const Share = props => {
   const shareAction = type => {
-    share.run({ type, ...props.share });
+    share.run({ type, ...props.options });
   };
 
   return (
@@ -35,7 +35,7 @@ const Share = props => {
 };
 
 Share.propTypes = {
-  share: React.PropTypes.object
+  options: React.PropTypes.object
 };
 
 export default Share;
